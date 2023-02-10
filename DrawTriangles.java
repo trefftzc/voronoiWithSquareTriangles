@@ -12,6 +12,10 @@ public class DrawTriangles extends Canvas {
         colorMap.put(0,Color.BLUE);
         colorMap.put(1,Color.RED);
         colorMap.put(2,Color.GREEN);
+        colorMap.put(3,Color.YELLOW);
+        colorMap.put(4,Color.ORANGE);
+        colorMap.put(5,Color.MAGENTA);
+        colorMap.put(6,Color.GRAY);
 	this.qt = qt;
     }
 	
@@ -34,9 +38,15 @@ public class DrawTriangles extends Canvas {
 	if (t.isUniform()) {
 	    Point[] vertices = t.getVertices();
 	    g.setColor(colorMap.get(t.closestSeed()));
+	    /*
 	    g.draw(new Line2D.Double(vertices[0],vertices[1]));
 	    g.draw(new Line2D.Double(vertices[1],vertices[2]));
-	    g.draw(new Line2D.Double(vertices[2],vertices[0]));
+	    g.draw(new Line2D.Double(vertices[2],vertices[0]));	
+	    */
+	    int [] x = {vertices[0].x,vertices[1].x,vertices[2].x};
+	    int [] y = {vertices[0].y,vertices[1].y,vertices[2].y};
+ 	    g.drawPolygon(x,y,3);
+            g.fillPolygon(x,y,3);
 	}
 	else {
 	    drawTriangle(qtn.getChild1(), g);

@@ -63,7 +63,7 @@ public class QuadTree
         if (direction) {
             if ((p1x == p3x)&&(p1x == p2x-1) && (p1y == p2y) && (p1y == p3y-1)) {
 
-                System.out.println("Small Triangle Up: "+p1.toString()+" "+p2.toString()+" "+p3.toString());
+                // System.out.println("Small Triangle Up: "+p1.toString()+" "+p2.toString()+" "+p3.toString());
                 return true;
             }
             else    
@@ -71,7 +71,7 @@ public class QuadTree
         }
         else {
             if ((p1x == p2x-1)&&(p2x == p3x) && (p1y == p2y) && (p1y == p3y-1)) {
-                System.out.println("Small Triangle Down: "+p1.toString()+" "+p2.toString()+" "+p3.toString());
+                // System.out.println("Small Triangle Down: "+p1.toString()+" "+p2.toString()+" "+p3.toString());
                 return true;
             }
             else    
@@ -82,7 +82,7 @@ public class QuadTree
 
     public QuadTreeNode createChildNode(Point p1,Point p2,Point p3,boolean direction,Set < Point > seeds) {
        
-        System.out.println(p1.toString()+" "+p2.toString()+" "+p3.toString());
+        // System.out.println(p1.toString()+" "+p2.toString()+" "+p3.toString());
         int closestSeedTop1 = calcClosestSeed(p1,seeds);
         int closestSeedTop2 = calcClosestSeed(p2,seeds);
         int closestSeedTop3 = calcClosestSeed(p3,seeds);

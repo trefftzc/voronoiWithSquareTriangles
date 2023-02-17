@@ -8,6 +8,7 @@ public class TestQuadTree2
     public static void main(String args[])
     {
 	QuadTree qt = new QuadTree();
+	SecondQuadTree qt2 = new SecondQuadTree();
 	Set < Point > seeds = new HashSet< Point > ();
 	Point seed1 = new Point(41,146);
         Point seed2 = new Point(337,472);
@@ -18,7 +19,8 @@ public class TestQuadTree2
 	seeds.add(seed3);
 	seeds.add(seed4);
 	qt.setRoot(qt.createRoot(512,seeds));
-	DrawTriangles drawer = new DrawTriangles(qt);
+	qt2.setRoot(qt2.createRoot(512,seeds));
+	DrawTriangles drawer = new DrawTriangles(qt,qt2);
 	JFrame f = new JFrame();
 	f.add(drawer);
 	f.setSize(512,512);

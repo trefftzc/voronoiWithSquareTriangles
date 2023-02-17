@@ -7,8 +7,9 @@ public class DrawTriangles extends Canvas {
 
     public static HashMap < Integer, Color > colorMap = new HashMap < Integer, Color > ();
     private QuadTree qt;
+    private SecondQuadTree qt2;
     
-    public DrawTriangles(QuadTree qt) {
+    public DrawTriangles(QuadTree qt,SecondQuadTree qt2) {
         colorMap.put(0,Color.BLUE);
         colorMap.put(1,Color.RED);
         colorMap.put(2,Color.GREEN);
@@ -17,16 +18,18 @@ public class DrawTriangles extends Canvas {
         colorMap.put(5,Color.MAGENTA);
         colorMap.put(6,Color.GRAY);
 	this.qt = qt;
+	this.qt2 = qt2;
     }
 	
 
     public void paint(Graphics g2) {
 	Graphics2D g = (Graphics2D) g2;
 	setBackground(Color.WHITE);
-	
 	QuadTreeNode qtn = qt.getRoot();
+	QuadTreeNode qtn2 = qt2.getRoot();
 	
 	drawTriangle(qtn,g);
+	drawTriangle(qtn2,g);
     }
 
     public void drawTriangle(QuadTreeNode qtn, Graphics2D g) {
